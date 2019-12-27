@@ -238,6 +238,10 @@ class PointRenderer<D> extends BaseCartesianRenderer<D> {
         num measureUpperBoundValue =
             measureUpperBoundFn != null ? measureUpperBoundFn(index) : null;
         num measureOffsetValue = measureOffsetFn(index);
+          
+        if (measureValue == null) {
+          continue;
+        }
 
         // Create a new point using the final location.
         final point = getPoint(
